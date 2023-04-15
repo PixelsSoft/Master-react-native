@@ -1,35 +1,31 @@
-import React, {useState} from 'react';
-
-import {CommonActions} from '@react-navigation/native';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import React, { useState } from 'react';
+import { CommonActions } from '@react-navigation/native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 import Modal from 'react-native-modal';
-
 import CircularImage from '../../components/CircularImage';
 import MyTouchableOpacity from '../../components/MyTouchableOpacity';
 import Row from '../../components/Row';
 import {
   COLORS,
-  CONSTANTS,
-  FONTFAMILY,
   FONTS,
   IMAGES,
   SCREENS,
   SIZES,
   STYLES,
 } from '../../constants';
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import Icon, {IconType} from '../../components/Icons';
+import Icon, { IconType } from '../../components/Icons';
 
-export default function More({navigation}) {
+export default function More( { navigation } ) {
   const dispatch = useDispatch();
 
   const [SELECTEDTAB, SetSELECTEDTAB] = useState();
 
   const navigateToNextScreen = screenName => {
-    navigation.navigate(screenName);
+    navigation.navigate( screenName );
   };
-  const DrawerBtn = ({name, IconName, type, Screen}) => {
+  const DrawerBtn = ( { name, IconName, type, Screen } ) => {
     return (
       <MyTouchableOpacity
         activeOpacity={1}
@@ -41,19 +37,19 @@ export default function More({navigation}) {
           },
         ]}
         // onPressIn={() => SetSELECTEDTAB(name)}
-        onPressOut={() => SetSELECTEDTAB(' ')}
+        onPressOut={() => SetSELECTEDTAB( ' ' )}
         onPress={() => {
-          SetSELECTEDTAB(name);
+          SetSELECTEDTAB( name );
           // navigateToNextScreen(Screen);
           // navigation.toggleDrawer();
         }}>
-        <Row style={{alignSelf: 'flex-start', alignItems: 'center'}}>
+        <Row style={{ alignSelf: 'flex-start', alignItems: 'center' }}>
           <Icon
             name={IconName}
             type={type}
             style={[
               STYLES.drawerIcon,
-              {color: SELECTEDTAB === name ? COLORS.white : COLORS.black},
+              { color: SELECTEDTAB === name ? COLORS.white : COLORS.black },
             ]}
           />
           <Text
@@ -70,27 +66,27 @@ export default function More({navigation}) {
     );
   };
 
-  const USERTYPE = useSelector(state => state.UserType.value);
+  const USERTYPE = useSelector( state => state.UserType.value );
 
-  const [isLogoutModalVisible, setisLogoutModalVisible] = React.useState(false);
+  const [isLogoutModalVisible, setisLogoutModalVisible] = React.useState( false );
 
-  const [logOutView, setLogOutView] = React.useState({
+  const [logOutView, setLogOutView] = React.useState( {
     textColor: COLORS.black,
     bgColor: COLORS.white,
-  });
+  } );
 
   const logout = () => {
     toggleModal();
   };
 
   const toggleModal = () => {
-    setisLogoutModalVisible(!isLogoutModalVisible);
+    setisLogoutModalVisible( !isLogoutModalVisible );
   };
 
-  const resetAction = CommonActions.reset({
+  const resetAction = CommonActions.reset( {
     index: 0,
-    routes: [{name: SCREENS.Login}],
-  });
+    routes: [{ name: SCREENS.Splash }],
+  } );
 
   return (
     <View
@@ -114,7 +110,7 @@ export default function More({navigation}) {
         onPress={() => {
           navigation.toggleDrawer();
         }}>
-        <View style={{paddingHorizontal: SIZES.twenty}}>
+        <View style={{ paddingHorizontal: SIZES.twenty }}>
           <CircularImage
             image={IMAGES.User1}
             style={{
@@ -128,14 +124,14 @@ export default function More({navigation}) {
               borderRadius: SIZES.fifty + 10,
             }}
           />
-          <View style={{marginHorizontal: SIZES.ten}}>
-            <Text style={[FONTS.mediumFont16, {color: COLORS.black}]}>
+          <View style={{ marginHorizontal: SIZES.ten }}>
+            <Text style={[FONTS.mediumFont16, { color: COLORS.black }]}>
               {/* {Profile?.records?.name} */}
               Taimoor
             </Text>
             <Text
               numberOfLines={1}
-              style={[FONTS.mediumFont12, {color: COLORS.brownGray}]}>
+              style={[FONTS.mediumFont12, { color: COLORS.brownGray }]}>
               18/8/1999
             </Text>
           </View>
@@ -149,36 +145,15 @@ export default function More({navigation}) {
           paddingHorizontal: SIZES.ten,
           paddingTop: SIZES.ten,
         }}>
-        <DrawerBtn
-          name={'Near By'}
-          IconName="location-outline"
-          type={IconType.Ionicons}
-          Screen={SCREENS.NearByMapView}
-        />
-        <DrawerBtn
-          name={'Notification'}
-          IconName="notifications-outline"
-          type={IconType.Ionicons}
-          Screen={SCREENS.NotificationSetting}
-        />
-        <DrawerBtn
-          name={'Term And Condition'}
-          IconName="file"
-          type={IconType.Octicons}
-          Screen={SCREENS.TermsAndConditions}
-        />
+
+
         <DrawerBtn
           name={'Settings'}
           IconName="setting"
           type={IconType.AntDesign}
-          Screen={SCREENS.Setting}
+          Screen={SCREENS.Splash}
         />
-        <DrawerBtn
-          name={'Support'}
-          IconName="questioncircleo"
-          type={IconType.AntDesign}
-          Screen={SCREENS.HelpAndSupport}
-        />
+
       </View>
 
       {/* Start of Logout Container */}
@@ -196,21 +171,21 @@ export default function More({navigation}) {
           logout();
         }}
         onPressIn={() =>
-          setLogOutView({textColor: COLORS.white, bgColor: COLORS.primary})
+          setLogOutView( { textColor: COLORS.white, bgColor: COLORS.primary } )
         }
         onPressOut={() =>
-          setLogOutView({
+          setLogOutView( {
             textColor: COLORS.black,
             bgColor: COLORS.white,
-          })
+          } )
         }>
-        <Row style={{alignSelf: 'flex-start', alignItems: 'center'}}>
+        <Row style={{ alignSelf: 'flex-start', alignItems: 'center' }}>
           <Icon
             name={'logout'}
             type={IconType.SimpleLineIcons}
-            style={[STYLES.drawerIcon, {color: logOutView.textColor}]}
+            style={[STYLES.drawerIcon, { color: logOutView.textColor }]}
           />
-          <Text style={[STYLES.drawerText, {color: logOutView.textColor}]}>
+          <Text style={[STYLES.drawerText, { color: logOutView.textColor }]}>
             Log Out
           </Text>
         </Row>
@@ -262,7 +237,7 @@ export default function More({navigation}) {
             }}>
             <MyTouchableOpacity
               onPress={() => {
-                navigation.navigate(SCREENS.Splash);
+                navigation.navigate( SCREENS.Splash );
               }}
               style={{
                 padding: SIZES.ten,
@@ -272,7 +247,7 @@ export default function More({navigation}) {
                 backgroundColor: COLORS.primary,
                 borderRadius: SIZES.ten,
               }}>
-              <Text style={[STYLES.mediumText, {color: COLORS.white}]}>
+              <Text style={[STYLES.mediumText, { color: COLORS.white }]}>
                 Yes
               </Text>
             </MyTouchableOpacity>
@@ -286,7 +261,7 @@ export default function More({navigation}) {
                 backgroundColor: COLORS.primary,
                 borderRadius: SIZES.ten,
               }}>
-              <Text style={[STYLES.mediumText, {color: COLORS.white}]}>No</Text>
+              <Text style={[STYLES.mediumText, { color: COLORS.white }]}>No</Text>
             </MyTouchableOpacity>
           </View>
         </View>
@@ -296,4 +271,4 @@ export default function More({navigation}) {
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create( {} );

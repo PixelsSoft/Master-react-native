@@ -1,40 +1,16 @@
-import {Dimensions, Platform, StyleSheet} from 'react-native';
-import {getStatusBarHeight} from 'react-native-status-bar-height';
+import { Dimensions, Platform, StyleSheet } from 'react-native';
+import { getStatusBarHeight } from 'react-native-status-bar-height';
 
-export const {width, height} = Dimensions.get('window');
+export const { width, height } = Dimensions.get( 'window' );
 
 /* *************** Colors ********** */
 
 export const COLORS = {
   primary: '#D9A738',
   orange: '#F89A2B',
-
-  secondary: '#181818',
-  blackWithopacity: '#00000085',
-
-  black: '#000000',
-  Red: '#FF0000',
-  crimson: '#860012',
-  white: '#ffffff',
-  blue: '#0037c1',
-  lightGray: '#D3D3D3',
-  gray: '#767577',
-  star: '#FFD700',
-  golden: '#FFD700',
-  purple: '#4e1789',
-  lightPurple: '#871af6',
-  brownGray: '#5d536a',
-  trueGreen: '#1eaf08',
-  halfWhite: '#eeeeee',
-  charcoalGrey: '#4a4b4d',
-  veryLightpink: '#ffeef2',
-  transparent: 'transparent',
-  textGrey: '#8a7e9a',
-  turqoiseGreen: '#00FF77',
-  veryLightPink: '#e6e6e6',
 };
 
-const appTheme = {COLORS};
+const appTheme = { COLORS };
 
 export default appTheme;
 
@@ -44,7 +20,6 @@ export const FONTFAMILY = {
   Light: 'Montserrat-Light',
   Medium: 'Montserrat-Medium',
   Regular: 'Montserrat-Regular',
-
   Ionicons: 'Ionicons',
   AntDesign: 'AntDesign',
   EvilIcons: 'EvilIcons',
@@ -60,65 +35,15 @@ export const FONTFAMILY = {
 
 /* * Images * */
 export const IMAGES = {
-  noWifi: require('../assets/images/no-signal.png'),
-  HomeBackground: require('../assets/images/homeBG.png'),
-  Logo: require('../assets/images/Logo.png'),
-  TabBar: require('../assets/images/TabBar.png'),
-  Splash: require('../assets/images/Splashbackground.png'),
-  User: require('../assets/images/User.png'),
-  User1: require('../assets/images/User1.png'),
-  User2: require('../assets/images/User2.png'),
-
-  Vendor: require('../assets/images/Vender.png'),
-  Timer: require('../assets/images/Timer.png'),
-  IconFilter: require('../assets/images/IconFilter.png'),
-  Certificate: require('../assets/images/Certificate.png'),
+  noWifi: require( '../assets/images/no-signal.png' ),
 };
 
 /* * Screens * */
 export const SCREENS = {
-  Startup: 'Startup',
-  AppliedJob: 'AppliedJob',
-  Login: 'Login',
-  SignUpUser: 'SignUpUser',
-  CreateAccount: 'CreateAccount',
-  SignUpVendor: 'SignUpVendor',
-  AboutApp: 'AboutApp',
   Splash: 'Splash',
-  ResetPassword: 'ResetPassword',
-  ForgotPassword: 'ForgotPassword',
-  Verification: 'Verification',
-  NewPassword: 'NewPassword',
-  Home: 'Home',
-  UserHome: 'UserHome',
-  Noitification: 'Noitification',
-  Payment: 'Payment',
-  Setting: 'Setting',
-  TermsAndConditions: 'TermsAndConditions',
-  NewOrder: 'NewOrder',
-  OrderHistory: 'OrderHistory',
-  OrderDetails: 'OrderDetails',
-  Coupons: 'Coupons',
-  Additem: 'Additem',
-  Profile: 'Profile',
-  EditProfile: 'EditProfile',
-  RiderLogin: 'RiderLogin',
-  SelectType: 'SelectType',
-  DrawerNavigator: 'DrawerNavigator',
-  HelpAndSupport: 'HelpAndSupport',
-  NearByMapView: 'NearByMapView',
-
+  DrawerNavigator: "DrawerNavigator",
   UserMainLayout: 'UserMainLayout',
-  PostJob: 'PostJob',
-  NotificationSetting: 'NotificationSetting',
-  ScheduleTime: 'ScheduleTime',
-  BookingConfirm: 'BookingConfirm',
-  Rating: 'Rating',
-  AddCard: 'AddCard',
-  Seacrh: 'Seacrh',
-  PrivacyAndPolicy: 'PrivacyAndPolicy',
-  VendorProfile: 'VendorProfile',
-  More: 'More',
+
 };
 
 export const SIZES = {
@@ -199,31 +124,31 @@ export const FONTS = {
     fontSize: SIZES.h24,
     color: COLORS.black,
   },
-  mediumFont10: {fontFamily: FONTFAMILY.Medium, fontSize: SIZES.body10},
-  mediumFont12: {fontFamily: FONTFAMILY.Medium, fontSize: SIZES.body12},
-  mediumFont14: {fontFamily: FONTFAMILY.Medium, fontSize: SIZES.body14},
-  mediumFont16: {fontFamily: FONTFAMILY.Medium, fontSize: SIZES.body16},
-  mediumFont18: {fontFamily: FONTFAMILY.Medium, fontSize: SIZES.body18},
-  regularFont10: {fontFamily: FONTFAMILY.Regular, fontSize: SIZES.body10},
-  regularFont12: {fontFamily: FONTFAMILY.Regular, fontSize: SIZES.body12},
-  regularFont14: {fontFamily: FONTFAMILY.Regular, fontSize: SIZES.body14},
-  regularFont16: {fontFamily: FONTFAMILY.Regular, fontSize: SIZES.body16},
-  regularFont18: {fontFamily: FONTFAMILY.Regular, fontSize: SIZES.body18},
-  lightFont08: {fontFamily: FONTFAMILY.Light, fontSize: SIZES.body08},
-  lightFont10: {fontFamily: FONTFAMILY.Light, fontSize: SIZES.body10},
-  lightFont12: {fontFamily: FONTFAMILY.Light, fontSize: SIZES.body12},
-  lightFont14: {fontFamily: FONTFAMILY.Light, fontSize: SIZES.body14},
-  lightFont16: {fontFamily: FONTFAMILY.Light, fontSize: SIZES.body16},
-  lightFont18: {fontFamily: FONTFAMILY.Light, fontSize: SIZES.body18},
+  mediumFont10: { fontFamily: FONTFAMILY.Medium, fontSize: SIZES.body10 },
+  mediumFont12: { fontFamily: FONTFAMILY.Medium, fontSize: SIZES.body12 },
+  mediumFont14: { fontFamily: FONTFAMILY.Medium, fontSize: SIZES.body14 },
+  mediumFont16: { fontFamily: FONTFAMILY.Medium, fontSize: SIZES.body16 },
+  mediumFont18: { fontFamily: FONTFAMILY.Medium, fontSize: SIZES.body18 },
+  regularFont10: { fontFamily: FONTFAMILY.Regular, fontSize: SIZES.body10 },
+  regularFont12: { fontFamily: FONTFAMILY.Regular, fontSize: SIZES.body12 },
+  regularFont14: { fontFamily: FONTFAMILY.Regular, fontSize: SIZES.body14 },
+  regularFont16: { fontFamily: FONTFAMILY.Regular, fontSize: SIZES.body16 },
+  regularFont18: { fontFamily: FONTFAMILY.Regular, fontSize: SIZES.body18 },
+  lightFont08: { fontFamily: FONTFAMILY.Light, fontSize: SIZES.body08 },
+  lightFont10: { fontFamily: FONTFAMILY.Light, fontSize: SIZES.body10 },
+  lightFont12: { fontFamily: FONTFAMILY.Light, fontSize: SIZES.body12 },
+  lightFont14: { fontFamily: FONTFAMILY.Light, fontSize: SIZES.body14 },
+  lightFont16: { fontFamily: FONTFAMILY.Light, fontSize: SIZES.body16 },
+  lightFont18: { fontFamily: FONTFAMILY.Light, fontSize: SIZES.body18 },
 };
 
-export const STYLES = StyleSheet.create({
+export const STYLES = StyleSheet.create( {
   container: {
     flex: 1,
     paddingTop:
       Platform.OS === 'android'
         ? SIZES.fifteen * 1.2
-        : getStatusBarHeight(true),
+        : getStatusBarHeight( true ),
     backgroundColor: COLORS.white,
   },
   splashLogo: {
@@ -287,65 +212,16 @@ export const STYLES = StyleSheet.create({
     shadowColor: COLORS.black,
     backgroundColor: COLORS.white,
   },
-});
+} );
 
 export const CONSTANTS = {
-  Grocery: 'grocery',
-  FoodDelievery: 'foodDelievery',
-  PickUp: 'PickUp',
-  VENDOR: 'VENDOR',
-  USER: 'User',
-  HUNGER: 'HUNGER',
-
-  REDUX_ACTIONS: {
-    ACCESSTOKEN: 'ACCESSTOKEN',
-    LOGIN: 'LOGIN',
-    AUTHENTICATE: 'AUTHENTICATE',
-    LOGOUT: 'LOGOUT',
-    SIGNUP: 'SIGNUP',
-
-    SELECTEDSECTION: 'SELECTEDSECTION',
-    PICKUP: 'PICKUP',
-    GROCERY: 'GROCERY',
-    DELIEVERY: 'DELIEVERY',
-    SHOWALTER: 'SHOWALTER',
-    SHOW_ERROR: 'SHOW_ERROR',
-    SHOW_LOADER: 'SHOW_LOADER',
-  },
 
   API_URLS: {
     BASE: 'http://porter.reignsol.net/api/v1/',
     BASE_VENDOR: 'http://porter.reignsol.net/api/v1/vendor/',
     IMAGE: 'http://porter.reignsol.net/',
 
-    LOGIN: 'login',
-    LOGOUT: 'sign-out',
-    SIGN_UP: 'register',
-    VERIFY_OTP: 'verify-otp',
-    FORGOT_PASSWORD: 'forgot-password',
-    RESET_PASSWORD: 'reset-password',
-    CHANGE_PASSWORD: 'change-password',
-    GET_PROFILE: 'getRestProfile',
-    UPDATE_PROFILE: 'update-profile',
-    GET_CONTENT: 'contents',
-    PAST_ORDERS: 'orders/past-orders',
-    NEW_ORDERS: 'orders/new-orders',
-    NEW_ORDERS_VIEW: 'orders/getOrderView',
-    VIEW_ORDER: 'orders/view-order',
-    GROCERY_CATEGORIES: 'items/getGroceryCategories',
-    RESTAURANT_CATEGORIES: 'items/getRestaurantCategories',
-    ITEMS_BY_CATEGORY: 'items/getByCategory',
-    ITEM_CREATE: 'items/create',
-    SAVE_DEVICE_TOKEN: '',
-    COUPONS: 'coupons',
-    CHANGE_ACTIVE_STATUS: 'customer/addRemove',
-    ORDER_REJECT: 'orders/reject',
-    ORDER_ACCEPT: 'orders/accept',
-    ORDER_READY: 'orders/ready-order',
-    ORDER_ASSIGN: 'orders/assign',
-    ORDER_COMPLETE: 'orders/complete-order',
-    GET_EXPERTISE: 'items/getAllExpertise',
-    GET_PAYMENTS: 'orders/get-paymentDetails',
+
   },
 
   /* * FirebaseConstants * */
@@ -359,13 +235,4 @@ export const CONSTANTS = {
     FCM: 'https://fcm.googleapis.com/fcm/send',
   },
 
-  DESTINATIONS: {
-    SIGN_UP: 'sign_up',
-    FORGOT_PASSWORD: 'forgot_password',
-  },
-
-  CACHE_KEYS: {
-    DEFAULT_USER: 'access_token',
-    IS_FIRST_TIME: 'is_first_time',
-  },
 };

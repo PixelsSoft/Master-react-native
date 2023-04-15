@@ -1,54 +1,45 @@
 import React from 'react';
-import {Image, StyleSheet, Platform, View, Text} from 'react-native';
+import { Image, StyleSheet, Platform, View, Text } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {COLORS, IMAGES, SCREENS, SIZES} from '../../constants';
-// import Notifications from '../../screens/Notification/Notification';
-// import Home from '../../screens/user/Home/Home';
-// import Profile from '../../screens/user/Profile/Profile';
-// import JobPost from '../../screens/user/JobPost/JobPost';
-// import More from '../../screens/more/More';
-import Icon, {IconType} from '../../components/Icons';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { COLORS, IMAGES, SCREENS, SIZES } from '../../constants';
+import Icon, { IconType } from '../../components/Icons';
 const screenOptions = {
   headerShown: false,
   animation: 'slide_from_right',
 };
-
-
-
-
-const Home=()=>{
-  return(
-  <View style={{justifyContent:"center", alignItems:"center", flex:1}}>
-    <Text style={{color:"black"}}>
-      test
-    </Text>
-  </View>)
+const Home = () => {
+  return (
+    <View style={{ justifyContent: "center", alignItems: "center", flex: 1 }}>
+      <Text style={{ color: "black" }}>
+        test
+      </Text>
+    </View> )
 }
-const Home1=()=>{
-  return(
-  <View style={{justifyContent:"center", alignItems:"center", flex:1}}>
-    <Text style={{color:"black"}}>
-      test
-    </Text>
-  </View>)
+const Home1 = () => {
+  return (
+    <View style={{ justifyContent: "center", alignItems: "center", flex: 1 }}>
+      <Text style={{ color: "black" }}>
+        test
+      </Text>
+    </View> )
 }
-const Home2=()=>{
-  return(
-  <View style={{justifyContent:"center", alignItems:"center", flex:1}}>
-    <Text style={{color:"black"}}>
-      test
-    </Text>
-  </View>)
+const Home2 = () => {
+  return (
+    <View style={{ justifyContent: "center", alignItems: "center", flex: 1 }}>
+      <Text style={{ color: "black" }}>
+        test
+      </Text>
+    </View> )
 }
-const Home3=()=>{
-  return(
-  <View style={{justifyContent:"center", alignItems:"center", flex:1}}>
-    <Text style={{color:"black"}}>
-      test
-    </Text>
-  </View>)
+const Home3 = () => {
+  return (
+    <View style={{ justifyContent: "center", alignItems: "center", flex: 1 }}>
+      <Text style={{ color: "black" }}>
+        test
+      </Text>
+    </View> )
 }
 
 
@@ -98,27 +89,27 @@ export default function BottomTabNavigation() {
         tabBarActiveTintColor: COLORS.white,
         tabBarInactiveTintColor: COLORS.halfWhite,
         tabBarStyle: styles.tabBarStyle,
-        // tabBarBackground: () => (
-        //   <LinearGradient
-        //     start={{x: 0, y: 3}}
-        //     end={{x: 1, y: 0}}
-        //     colors={['#FCF6BA', COLORS.primary, '#BF953F']}
-        //     style={[StyleSheet.absoluteFill]}
-        //   />
-        // ),
+        tabBarBackground: () => (
+          <LinearGradient
+            start={{ x: 0, y: 3 }}
+            end={{ x: 1, y: 0 }}
+            colors={['#FCF6BA', COLORS.primary, '#BF953F']}
+            style={[StyleSheet.absoluteFill]}
+          />
+        ),
       }}>
-      {tabs.map((item, index) => (
+      {tabs.map( ( item, index ) => (
         <Tab.Screen
           key={index}
           name={item.name}
           component={item.component}
-          options={({}) => ({
-            tabBarIcon: ({focused, color}) => (
+          options={( { } ) => ( {
+            tabBarIcon: ( { focused, color } ) => (
               <View
-                // style={[
-                //   item.initialRoute === SCREENS.PostJob && styles.centertab,
-                // ]}
-                >
+              // style={[
+              //   item.initialRoute === SCREENS.PostJob && styles.centertab,
+              // ]}
+              >
                 <Icon
                   name={item.icon}
                   type={IconType.Ionicons}
@@ -126,22 +117,22 @@ export default function BottomTabNavigation() {
                 />
               </View>
             ),
-          })}
-          listeners={({navigation}) => ({
+          } )}
+          listeners={( { navigation } ) => ( {
             tabPress: e => {
-              if (item.name === 'MenuScreen') {
+              if ( item.name === 'MenuScreen' ) {
                 e.preventDefault();
                 navigation.toggleDrawer();
               }
             },
-          })}
+          } )}
         />
-      ))}
+      ) )}
     </Tab.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create( {
   tabBarStyle: {
     borderTopWidth: 0,
     position: 'absolute',
@@ -157,4 +148,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+} );
